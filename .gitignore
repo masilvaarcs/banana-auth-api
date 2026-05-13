@@ -46,6 +46,13 @@ secrets.json
 Thumbs.db
 desktop.ini
 
+# Language Server / editor cache
+*.lscache
+
+# GitHub Copilot / AI agent artifacts
+.github/
+AGENTS.md
+
 # Test results
 TestResults/
 coverage/

@@ -1,0 +1,27 @@
+@banana_auth_api_host = http://localhost:5156
+
+GET {{banana_auth_api_host}}/api/auth/health
+Accept: application/json
+
+###
+
+POST {{banana_auth_api_host}}/api/auth/register
+Content-Type: application/json
+
+{
+	"name": "Usuario Teste",
+	"email": "teste.auth@banana.dev",
+	"password": "Senha@123"
+}
+
+###
+
+POST {{banana_auth_api_host}}/api/auth/login
+Content-Type: application/json
+
+{
+	"email": "teste.auth@banana.dev",
+	"password": "Senha@123"
+}
+
+###
