@@ -113,6 +113,14 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 
+// Auto-migrate: cria o banco BananaAuth e aplica todas as migrations EF Core na inicialização.
+// Elimina a necessidade de rodar 'dotnet ef database update' manualmente após o clone.
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await db.Database.MigrateAsync();
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

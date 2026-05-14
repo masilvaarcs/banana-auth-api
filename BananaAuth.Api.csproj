@@ -20,4 +20,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <!-- Exclui o projeto de testes do glob padrão **/*.cs para evitar erros de compilação -->
+  <ItemGroup>
+    <Compile Remove="BananaAuth.Tests/**" />
+  </ItemGroup>
+
 </Project>
